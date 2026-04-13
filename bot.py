@@ -47,21 +47,20 @@ def get_status(price, ticker_data):
     else:
         return ("✅", "בטווח — המשך להחזיק")
 
-
 def fetch_prices():
     prices = {}
-    try:
-        symbols = list(TICKERS.keys())
-        data = yf.download(symbols, period="1d", interval="1m", progress=False)
-        for sym in symbols:
-            try:
-                price = float(data["Close"][sym].dropna().iloc[-1])
-                prices[sym] = round(price, 2)
-            except Exception:
-                prices[sym] = None
-    except Exception as e:
-        logger.error(f"Error fetching prices: {e}")
+    symbols = list(TICKERS.keys())
+    for sym in symbols:
+        try:
+            ticker = yf.Ticker(sym)
+            data = ticker.fast_info
+            price = round(float(data.last_price), 2)
+            prices[sym] = price
+        except Exception as e:
+            logger.error(f"Error fetching {sym}: {e}")
+            prices[sym] = None
     return prices
+
 
 
 def pct(current, ref):
