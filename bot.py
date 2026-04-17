@@ -36,7 +36,7 @@ TICKERS = {
     "BAC":  {"name": "Bank of America",   "stops": {"warn": 50,   "soft": 46,   "hard": 42},   "targets": [57, 61, 66]},
     "COIN": {"name": "Coinbase",          "stops": {"warn": 175,  "soft": 158,  "hard": 140},  "targets": [230, 280, 350]},
     "GLXY": {"name": "Galaxy Digital",    "stops": {"warn": 21,   "soft": 18,   "hard": 15},   "targets": [30, 38, 45]},
-    "NYXH": {"name": "Nyxoah SA",         "stops": {"warn": 3.10, "soft": 2.80, "hard": 2.35}, "targets": [5.85, 8.00, 11.00]},
+    "NYXH": {"name": "Nyxoah SA",         "stops": {"warn": 3.10, "soft": 2.80, "hard": 2.35}, "targets": [8.00, 10.25, 13.00]},
 }
 
 def get_status(price, ticker_data):
