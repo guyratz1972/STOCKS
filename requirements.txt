@@ -1,5 +1,0 @@
-python-telegram-bot==20.7
-anthropic
-yfinance
-APScheduler==3.10.4
-pytz
